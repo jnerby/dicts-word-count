@@ -1,7 +1,9 @@
 """Count words in file."""
-def count_words(filename):
+import sys
 
-    file = open(filename)
+def count_words():
+
+    file = open(sys.argv[1])
 
     # initialize empty dict
     result = {}
@@ -21,4 +23,4 @@ def count_words(filename):
         print(word, value)
 
 # call function
-count_words("twain.txt")
+count_words()
