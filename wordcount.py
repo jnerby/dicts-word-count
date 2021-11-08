@@ -22,5 +22,26 @@ def count_words():
     for word, value in result.items():
         print(word, value)
 
+def tokenize():
+    file = open(sys.argv[1])
+
+    # initialize empty tokens list
+    tokens = []
+
+    # split text file by spaces
+    for line in file:
+        # get list words from text file
+        line = line.strip().split(" ")
+        # loop through words
+        for word in line:
+            # if word is not tokens list
+            if word not in tokens:
+                # add to tokens
+                tokens.append(word)
+    
+    file.close()
+
+    return tokens
+
 # call function
-count_words()
+print(tokenize())
